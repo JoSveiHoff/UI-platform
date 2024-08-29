@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Jersey 10", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #29901a;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+p {
+    color: #a4a8ac;
+}
+
+body {
+    display: flex;
+    background: #111;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: #111;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar .side-nav .item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for item */
+}
+
+.sidebar .side-nav .item a {
+    color: #1aa43a;
+    transition: all 0.3s ease; /* Smooth transition for link */
+}
+
+.sidebar .side-nav .item i {
+    font-size: 20px;
+    color: #f5f6f7;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for icon */
+}
+
+.sidebar .side-nav .item.active {
+    background: #fafafa;
+}
+
+.sidebar .side-nav .item.active a,
+.sidebar .side-nav .item.active i {
+    color: #111;
+    font-weight: bold;
+}
+
+/* Hover Effect for Navigation Items */
+.sidebar .side-nav .item a:hover,
+.sidebar .side-nav .item i:hover {
+    color: #29901a; /* Change color on hover */
+}
+
+.sidebar .side-nav .item:hover i {
+    transform: scale(1.2); /* Slightly scale up the icon */
+}
+
+.sidebar .side-nav .item a:hover i {
+    transform: scale(1.2); /* Slightly scale up the icon */
+}
+
+.sidebar .side-profile {
+    background: #fafafa;
+    padding: 14px 10px;
+    border-radius: 10px;
+    margin-top: auto; /* Push to the bottom */
+}
+
+.sidebar .side-profile .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .side-profile .info img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sidebar .side-profile .info a {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.sidebar .side-profile .info p {
+    font-size: 12px;
+    color: #666869;
+    margin: 6px 0 25px;
+}
+
+.sidebar .side-profile .skills .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.sidebar .side-profile .skills .skill-tags .item {
+    padding: 6px;
+    background: #e7e7e7;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #666869;
+}
+
+.sidebar .side-profile button {
+    margin-top: 16px;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background: #111;
+    color: #1aa43a;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Main Container Styles */
+.container {
+    margin-left: 250px;
+    background: #fff;
+    padding: 20px 40px 20px 24px;
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    color: #111;
+}
+
+.container .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.container .nav .search,
+.container .nav .city {
+    display: flex;
+    align-items: center;
+    background: #f2f2f2;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.container .nav .search input,
+.container .nav .city input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    padding-left: 36px;
+}
+
+.container .nav > button {
+    background: #111;
+    color: #fafafa;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.container .nav > button#menuToggle {
+    display: none;
+    padding: 6px;
+    font-size: 22px;
+}
+
+.container .nav > i {
+    font-size: 20px;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.container .nav .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .nav .user-info img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container .nav .user-info a {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.container .nav .user-info a i {
+    font-size: 20px;
+}
+
+.container .nav .user-info p {
+    font-size: 13px;
+}
+
+/* Job Item Styles */
+.job-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.job-item h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.job-item p {
+    margin: 5px 0;
+}
+
+.job-item a {
+    color: #1aa43a;
+    font-weight: bold;
+}
+
+/* GitHub Search Section */
+.search-overlay {
+    position: fixed; /* Ensure it covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other content */
+    color: #fff; /* Text color for readability */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.search-box-container {
+    background-color: #161922; /* Dark background for the search box container */
+    padding: 20px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    max-width: 500px; /* Limit maximum width */
+    width: 100%;
+    position: relative; /* Ensure positioning for child elements */
+}
+
+.searchBox {
+    background-color: #161922; /* Dark background for the search box */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    width: 100%; /* Full width for responsiveness */
+}
+
+.searchBox input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 80%;
+    color: #fff;
+    font-size: 15px;
+}
+
+.searchBox button {
+    background-color: #107232;
+    color: #7c4040;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchBox button:hover {
+    background-color: #1ea343;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Align close button to the top-right corner */
+    font-size: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Adjust color as needed */
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #e74c3c; /* Color change on hover */
+}
+
+.details {
+    margin-top: 20px;
+    background-color: #161922;
+    padding: 20px 25px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    display: none;
+    position: relative;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile-image {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-details {
+    padding: 10px;
+    width: 25rem;
+}
+
+.username {
+    font-size: 13px;
+    color: #675afe;
+}
+
+.bio {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.stats {
+    background-color: #15a35a;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 6px;
+}
+
+.media {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.media p {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+/* Calculator Styles */
+.calculator-container {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for actual centering */
+    width: 350px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    background-color: #fff; /* Background color */
+    border: 1px solid #ccc; /* Border for visibility */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Shadow for better appearance */
+    display: none; /* Initially hidden, toggle with JavaScript */
+    z-index: 1000; /* Ensure it appears above other elements */
+    overflow: hidden; /* Prevent buttons from overflowing */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    left: 10px; /* Move closer to the left edge */
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0f480c;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #e74c3c;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.screen {
+    background: #222;
+    color: #fff;
+    font-size: 2.5em; /* Make the screen text larger */
+    text-align: right;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-height: 60px; /* Ensure there's enough height for screen */
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box;
+}
+
+.calc-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between button rows */
+}
+
+.calc-button-row {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
+    width: 100%;
+}
+
+.calc-button {
+    flex: 1;
+    padding: 20px; /* Increase button padding */
+    font-size: 1.5em; /* Make button text larger */
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    border-radius: 5px; /* Add border radius for better appearance */
+}
+
+.calc-button.double {
+    flex: 2; /* Double width for 'C' button */
+}
+
+.calc-button.triple {
+    flex: 3; /* Triple width for '0' button */
+}
+
+.calc-button:hover {
+    background-color: #ddd; /* Change background on hover */
+}

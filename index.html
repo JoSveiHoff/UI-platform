@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Sidebar Layout</title>
+</head>
+<body>
+<div class="sidebar">
+    <a href="#">Works</a>
+    <div class="side-nav">
+        <div class="item active">
+            <i class='bx bx-search-alt'></i>
+            <a href="#">Home</a>
+        </div>
+        <div class="item">
+            <i class='bx bx-notification'></i>
+            <a href="#">Notifications</a>
+        </div>
+        <div class="item">
+            <a href="https://github.com/JoSveiHoff?tab=repositories" target="_blank">
+                <i class='bx bxs-castle'></i> My works
+            </a>
+        </div>
+        <div class="item">
+            <i class='bx bxs-bookmarks'></i>
+            <a href="#">Saved Jobs</a>
+        </div>
+        <div class="item">
+            <i class='bx bxl-github' id="githubSearchToggle"></i>
+            <a href="#">Søk opp git brukere</a>
+        </div>
+        <div class="item">
+            <i class='bx bxs-calculator' id="calculatorToggle"></i>
+            <a href="#">Calculator</a>
+        </div>
+        <div class="item">
+            <i class='bx bx-cog'></i>
+            <a href="#">Settings</a>
+        </div>
+    </div>
+    <div class="side-profile">
+        <div class="info">
+            <img src="assets/thumbnail_image1.png" alt="User Profile">
+            <a href="#">Jonathan</a>
+            <p>Nyutdannet IT utvikler</p>
+        </div>
+        <div class="skills">
+            <p>Kunnskap og ferdigheter</p>
+            <div class="skills-tags">
+                <div class="item">
+                    <p>UI designer</p>
+                </div>
+                <div class="item">
+                    <p>Utvikler</p>
+                </div>
+                <div class="item">
+                    <p>CSS/HTML</p>
+                </div>
+            </div>
+        </div>
+        <button>View Profile</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="nav">
+        <button id="menuToggle"><i class='bx bx-menu'></i></button>
+        <div class="search">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="search for jobs or companies">
+        </div>
+        <div class="city">
+            <i class='bx bxs-city'></i>
+            <input type="text" placeholder="Enter location">
+        </div>
+        <button id="searchButton">Search</button>
+        <i class='bx bx-bell'></i>
+        <div class="user-info">
+            <img src="assets/thumbnail_image1.png" alt="User Profile">
+            <div>
+                <a href="#">Jonathan <i class='bx bxs-down-arrow'></i></a>
+                <p>Jonathan@test.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="content">
+            <div class="header">
+                <h2>Job Listings</h2>
+            </div>
+            <div id="jobs-list" class="jobs-list">
+                <!-- Job items will be inserted here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GitHub Search Section -->
+<div class="search-overlay" id="searchOverlay">
+    <button class="close-button" id="closeSearch">×</button>
+    <h1>Søk opp Github brukere</h1>
+    <input type="text" id="searchInput" placeholder="Enter Github Username">
+    <button onclick="searchGithub()">Search</button>
+    <div class="details" id="result"></div>
+</div>
+
+<!-- Calculator Section -->
+<div class="calculator-container" id="calculatorContainer">
+    <button class="close-button" id="closeCalculator">×</button>
+    <div class="wrapper">
+        <section class="screen">0</section>
+        <section class="calc-buttons">
+            <div class="calc-button-row">
+                <button class="calc-button double">C</button>
+                <button class="calc-button">←</button>
+                <button class="calc-button">÷</button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button">7</button>
+                <button class="calc-button">8</button>
+                <button class="calc-button">9</button>
+                <button class="calc-button">×</button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button">4</button>
+                <button class="calc-button">5</button>
+                <button class="calc-button">6</button>
+                <button class="calc-button">-</button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button">1</button>
+                <button class="calc-button">2</button>
+                <button class="calc-button">3</button>
+                <button class="calc-button">+</button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button triple">0</button>
+                <button class="calc-button">=</button>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
